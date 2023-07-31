@@ -1,0 +1,14 @@
+
+<div class="container text-bg-info p-2">
+<h4 class="mb-3 mt-3"> Gallery</h4> 
+<!-- Page Content -->
+
+  <hr class="mt-2 mb-5">
+  <div class="row text-center text-lg-start">
+    <div class="col-lg-3 col-md-4 col-6" *ngFor="let item of gallery">
+      <a href="#" class="d-block mb-4 h-100">
+        <img class="img-fluid img-thumbnail" [src]="item.imgUrl" alt="gallery pics">
+      </a>
+    </div>   
+  </div>
+</div>

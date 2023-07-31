@@ -1,0 +1,99 @@
+<!-- Contact Start -->
+<div class="container text-bg-info p-2">
+    <h4 class="mb-3 mt-3">Registration Form </h4>
+    <!-- Page Content -->
+    <hr class="mt-2 mb-5">
+    <div class="row g-5">
+      <div class="col-lg-10 mx-auto">
+        <h6 class="mb-4">Kindly register your details here to participate in the Spelling Bee competition.</h6>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+          <div class="row g-3">
+            <div class="col-md-8">
+              <div class="form-floating">
+                <input type="text" class="form-control border-0 bg-light" id="name" placeholder="Your Name"
+                  formControlName="name"
+                  [ngClass]="{'is-invalid': (submitted && f['name'].errors) ||(f['name'].errors && f['name'].touched)}">
+                <label for="name">Student Name</label>
+                <div *ngIf="(submitted && f['name'].errors) ||(f['name'].errors && f['name'].touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f['name'].errors['required']">Name is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-floating">
+                <input type="text" class="form-control border-0 bg-light" id="age" placeholder="Your age"
+                formControlName="age"
+                  [ngClass]="{'is-invalid': (submitted && f['age'].errors) ||(f['age'].errors && f['age'].touched)}">
+                <label for="age">Student Age</label>
+                <div *ngIf="(submitted && f['age'].errors) ||(f['age'].errors && f['age'].touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f['age'].errors['required']">Age is required</div>
+                  <div *ngIf="f['age'].errors['pattern']">Only Number are allowed</div>
+                  <div *ngIf="f['age'].errors['maxlength']">Only 2 digits are allowed</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="email" class="form-control border-0 bg-light" id="email" placeholder="Your Email"
+                  formControlName="email"
+                  [ngClass]="{'is-invalid': (submitted && f['email'].errors) ||(f['email'].errors && f['email'].touched)}">
+                <label for="email">Parent Email</label>
+                <div *ngIf="(submitted && f['email'].errors) ||(f['email'].errors && f['email'].touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f['email'].errors['required']">Email is required</div>
+                  <div *ngIf="f['email'].errors['email']">Email is not valid</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="email" class="form-control border-0 bg-light" id="contact" placeholder="Your Contact"
+                  formControlName="phone"
+                  [ngClass]="{'is-invalid': (submitted && f['phone'].errors) ||(f['phone'].errors && f['phone'].touched)}">
+                <label for="email">Parent Contact</label>
+                <div *ngIf="(submitted && f['phone'].errors) ||(f['phone'].errors && f['phone'].touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f['phone'].errors['required']">Contact is required</div>
+                  <div *ngIf="f['phone'].errors['pattern']">Only Number are allowed</div>
+                  <div *ngIf="f['phone'].errors['maxlength']">Only 10 digits are allowed</div>
+  
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-floating">
+                <input type="text" class="form-control border-0 bg-light" id="standard" placeholder="Your Class"
+                  formControlName="standard"
+                  [ngClass]="{'is-invalid': (submitted && f['standard'].errors) ||(f['standard'].errors && f['standard'].touched)}">
+                <label for="standard">Student Class</label>
+                <div *ngIf="(submitted && f['standard'].errors) ||(f['standard'].errors && f['standard'].touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="f['standard'].errors['required']">Class is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control border-0 bg-light" id="school" placeholder="Your School"
+                    formControlName="school"
+                    [ngClass]="{'is-invalid': (submitted && f['school'].errors) ||(f['school'].errors && f['school'].touched)}">
+                  <label for="school">Student School Name</label>
+                  <div *ngIf="(submitted && f['school'].errors) ||(f['school'].errors && f['school'].touched)"
+                    class="invalid-feedback">
+                    <div *ngIf="f['school'].errors['required']">School is required</div>
+                  </div>
+                </div>
+              </div>
+           
+            <div class="col-12">
+              <button class="btn btn-primary py-3 px-5" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  
+    </div>
+  </div>
+  <!-- Contact End -->
