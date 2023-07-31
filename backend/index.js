@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // routers
 const router = require('./src/routes/contactRoute')
-app.use('/api', router)
+app.use('/', router)
 
 //port
 const PORT = process.env.PORT || 8080
