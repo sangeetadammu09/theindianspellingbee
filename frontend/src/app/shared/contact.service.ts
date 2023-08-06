@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class ContactService {
 
-  baseUri: string = '/api';
- // headers = new HttpHeaders().set('Content-Type', 'application/json');
-
+  //baseUri: string = 'http://localhost:8080/api';
+    baseUri: string = '/api';
+ 
   constructor(private http:HttpClient) { }
 
   contactEmail(body:any) {

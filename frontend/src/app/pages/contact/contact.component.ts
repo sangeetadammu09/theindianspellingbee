@@ -43,13 +43,14 @@ export class ContactComponent implements OnInit {
        console.log(contactObject,'------------')
       this.contactService.contactEmail(contactObject).subscribe((data: any) => {
         if (data.status == 200) {
+        
           this.router.navigate(['/'])
           this.toastrService.success('Thankyou! Your query has been saved successfully. Our Team will get back to you soon!');
         }
 
       }, (error: any) => {
         console.log(error)
-        this.toastrService.error('Something went wrong')
+        //this.toastrService.error('Something went wrong')
       })
 
     } else {
